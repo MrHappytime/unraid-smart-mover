@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Configuration
-JELLYFIN_URL="http://192.168.1.60:8096"
+JELLYFIN_URL="http://[ADD_LOCAL_JELLYFIN_SERVER_HERE]:8096"
 JELLYFIN_API_KEY=""  # You'll need to fill this in
 CACHE_PATH="/mnt/cache"
 ARRAY_PATH="/mnt/disk1"
