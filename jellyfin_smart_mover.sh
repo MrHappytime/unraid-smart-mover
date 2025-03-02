@@ -1,16 +1,16 @@
 #!/bin/bash
 
 # Configuration
-JELLYFIN_URL="http://192.168.1.60:8096"
+JELLYFIN_URL="http://[ADD_LOCAL_JELLYFIN_SERVER_HERE]:8096"
 JELLYFIN_API_KEY=""  # You'll need to fill this in
 CACHE_PATH="/mnt/cache"
-ARRAY_PATH="/mnt/disk1"
+ARRAY_PATH="/mnt/disk1" #You'll need to check the ARRAY_PATH path for your specific case
 MAX_FILES=1  # Set to 0 for no limit
 CACHE_THRESHOLD=75  # Percentage threshold for cache usage
 
 # User IDs - add more as needed
 declare -a JELLYFIN_USER_IDS=(
-    "8ca60725971740f98d89215b3ee38228"  # First user
+    "YOUR_FIRST_USER_ID_HERE"  # First user
     "YOUR_SECOND_USER_ID_HERE"           # Second user - replace with actual ID
 )
 
