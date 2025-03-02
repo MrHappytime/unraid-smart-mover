@@ -4,7 +4,7 @@
 JELLYFIN_URL="http://[ADD_LOCAL_JELLYFIN_SERVER_HERE]:8096"
 JELLYFIN_API_KEY=""  # You'll need to fill this in
 CACHE_PATH="/mnt/cache"
-ARRAY_PATH="/mnt/disk1"
+ARRAY_PATH="/mnt/disk1" #You'll need to check the ARRAY_PATH path for your specific case
 MAX_FILES=1  # Set to 0 for no limit
 CACHE_THRESHOLD=75  # Percentage threshold for cache usage
 
