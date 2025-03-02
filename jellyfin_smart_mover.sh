@@ -10,7 +10,7 @@ CACHE_THRESHOLD=75  # Percentage threshold for cache usage
 
 # User IDs - add more as needed
 declare -a JELLYFIN_USER_IDS=(
-    "8ca60725971740f98d89215b3ee38228"  # First user
+    "YOUR_FIRST_USER_ID_HERE"  # First user
     "YOUR_SECOND_USER_ID_HERE"           # Second user - replace with actual ID
 )
 
