@@ -95,6 +95,8 @@ For automated execution, you can also set up a cron job.
 
 ## Safety Features
 
+- Checks for ongoing parity check/rebuild operations before running
+- Checks for active mover operations before running
 - Checks cache usage before operations
 - Verifies file existence before moving
 - Uses safe move operations
