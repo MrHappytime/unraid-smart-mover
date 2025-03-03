@@ -305,8 +305,35 @@ process_played_items() {
     log_message "----------------------------------------"
 }
 
+# Function to check for ongoing system operations
+check_system_operations() {
+    # Check for ongoing parity check/rebuild
+    if [ -f "/proc/mdcmd" ]; then
+        if grep -q "check\|rebuild" /proc/mdcmd; then
+            log_message "ERROR: Parity check or rebuild is in progress. Aborting."
+            return 1
+        fi
+    fi
+
+    # Check for active mover operations
+    if [ -f "/var/run/mover.pid" ]; then
+        if kill -0 "$(cat /var/run/mover.pid)" 2>/dev/null; then
+            log_message "ERROR: Mover is currently running. Aborting."
+            return 1
+        fi
+    fi
+
+    return 0
+}
+
 # Main execution
 log_message "=== Starting Jellyfin Smart Mover ==="
+
+# Check for ongoing system operations
+if ! check_system_operations; then
+    log_message "Exiting due to ongoing system operations"
+    exit 1
+fi
 
 # Check if API key is set
 if [ -z "$JELLYFIN_API_KEY" ]; then
